@@ -24,6 +24,7 @@
                         <th scope="col" width="150px" class="text-center">Aksi</th>
                     </tr>
                 </thead>
+
                 <tbody>
 
                     @php
@@ -39,7 +40,7 @@
                                         Edit
                                     </a>
 
-                                    <form action="" method="POST">
+                                    <form action="{{ route('kategori.hapus', $item->id) }}" method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-danger">
                                             Hapus
@@ -51,6 +52,7 @@
                     @endforeach
 
                 </tbody>
+
             </table>
         </div>
     </div>

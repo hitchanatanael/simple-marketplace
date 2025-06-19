@@ -124,22 +124,23 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('dashboard') }}">
-                    <i class="bi bi-grid"></i>
+                <a class="nav-link {{ Request::is('/') ? 'active' : 'collapsed' }}" href="{{ route('dashboard') }}">
+                    <i class="bi bi-speedometer"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('produk') }}">
-                    <i class="bi bi-grid"></i>
+                <a class="nav-link {{ Request::is('produk') ? 'active' : 'collapsed' }}" href="{{ route('produk') }}">
+                    <i class="bi bi-box-fill"></i>
                     <span>Produk</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('kategori') }}">
-                    <i class="bi bi-grid"></i>
+                <a class="nav-link {{ Request::is('kategori') ? 'active' : 'collapsed' }}"
+                    href="{{ route('kategori') }}">
+                    <i class="bi bi-list-task"></i>
                     <span>Kategori</span>
                 </a>
             </li><!-- End Dashboard Nav -->

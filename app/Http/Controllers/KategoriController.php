@@ -53,4 +53,13 @@ class KategoriController extends Controller
 
         return redirect()->route('kategori');
     }
+
+    public function hapus($id)
+    {
+        $kategori = Kategori::findOrFail($id);
+
+        $kategori->delete();
+
+        return redirect()->back();
+    }
 }

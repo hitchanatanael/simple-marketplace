@@ -19,32 +19,44 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">No.</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Kategori</th>
+                        <th scope="col" width="150px" class="text-center">Aksi</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>@social</td>
-                    </tr>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($produk as $item)
+                        <tr>
+                            <th scope="row">{{ $no++ }}.</th>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->harga }}</td>
+                            <td>
+                                <img src="{{ asset('storage/' . $item->foto) }}" width="70">
+                            </td>
+                            <td>{{ $item->kategori->nama }}</td>
+                            <td>
+                                <div class="d-flex justify-content-between">
+                                    <a href="{{ route('produk.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+
+                                    <form action="{{ route('produk.hapus', $item->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
+
             </table>
         </div>
     </div>
