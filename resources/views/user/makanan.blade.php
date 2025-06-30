@@ -1,34 +1,11 @@
 @extends('layouts.user')
 @section('main')
-    <div class="section" style="padding-bottom: 50px;">
-        <div class="container">
-            <div class="row g-4">
-                @foreach ($thumbnails as $item)
-                    <div class="col-md-6 col-xs-6">
-                        <div class="shop" style="margin-bottom: 30px;">
-                            <div class="shop-img">
-                                <img src="{{ asset('storage/' . $item->foto) }}" alt="" class="img-fluid w-100"
-                                    style="max-height: 300px; object-fit: cover;">
-                            </div>
-                            <div class="shop-body">
-                                <h3>{{ $item->nama }}</h3>
-                                <a href="{{ route('showKategori', ['nama' => $item->nama]) }}" class="cta-btn">
-                                    Shop now <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-
     <div class="section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h3 class="title">Produk</h3>
+                        <h3 class="title">Makanan</h3>
                     </div>
                 </div>
 
@@ -74,7 +51,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeUserController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ThumbnailsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -20,3 +22,14 @@ Route::post('/kategori-store', [KategoriController::class, 'store'])->name('kate
 Route::get('/edit-kategori/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
 Route::post('/update-kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
 Route::post('/hapus-kategori/{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
+
+Route::get('/thumbnails', [ThumbnailsController::class, 'index'])->name('thumbnails');
+Route::get('/tambah-thumbnails', [ThumbnailsController::class, 'create'])->name('tambah-thumbnails');
+Route::post('/thumbnails-store', [ThumbnailsController::class, 'store'])->name('thumbnails.store');
+Route::post('/hapus-thumbnails/{id}', [ThumbnailsController::class, 'hapus'])->name('thumbnails.hapus');
+
+//user 
+Route::get('/home', [HomeUserController::class, 'index']);
+Route::get('/makanan', [HomeUserController::class, 'showMakanan'])->name('showMakanan');
+Route::get('/minuman', [HomeUserController::class, 'showMinuman'])->name('showMinuman');
+Route::get('/kategori/{nama}', [HomeUserController::class, 'showKategori'])->name('showKategori');

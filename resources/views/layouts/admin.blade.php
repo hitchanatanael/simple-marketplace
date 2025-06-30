@@ -145,6 +145,14 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('thumbnails') ? 'active' : 'collapsed' }}"
+                    href="{{ route('thumbnails') }}">
+                    <i class="bi bi-list-task"></i>
+                    <span>Thumbnails</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
         </ul>
 
     </aside><!-- End Sidebar-->
