@@ -36,13 +36,6 @@
 
                     <div class="col-md-6 clearfix">
                         <div class="header-ctn">
-
-                            <div class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span>Your Cart</span>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,11 +56,10 @@
                             <div class="footer">
                                 <h3 class="footer-title">About Us</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut.
+                                    Simple Marketplace tempat untuk berbelanja
                                 </p>
                                 <ul class="footer-links">
-                                    <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+                                    <li><a href="#"><i class="fa fa-map-marker"></i>Cipta Karya</a></li>
                                     <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
                                     <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
                                 </ul>

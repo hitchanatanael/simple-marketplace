@@ -61,8 +61,8 @@
                                                     <i class="fa fa-star text-warning"></i>
                                                     <i class="fa fa-star text-warning"></i>
                                                 </div>
-                                                <a href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20mau%20beli%20{{ urlencode($item->nama) }}"
-                                                    target="_blank" class="btn btn-success btn-block mt-2">
+                                                <a href="https://wa.me/6282285774472?text=Halo%20saya%20mau%20beli%20{{ urlencode($item->nama) }}"
+                                                    target="blank" class="btn btn-success btn-block mt-2">
                                                     <i class="fa fa-whatsapp"></i> Beli via WhatsApp
                                                 </a>
                                             </div>

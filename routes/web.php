@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeUserController;
 use App\Http\Controllers\KategoriController;
@@ -7,7 +8,10 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ThumbnailsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+
+// Admin
+Route::get('/simple-mc-admin', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
 Route::get('/tambah-produk', [ProdukController::class, 'create'])->name('tambah-produk');
@@ -28,8 +32,6 @@ Route::get('/tambah-thumbnails', [ThumbnailsController::class, 'create'])->name(
 Route::post('/thumbnails-store', [ThumbnailsController::class, 'store'])->name('thumbnails.store');
 Route::post('/hapus-thumbnails/{id}', [ThumbnailsController::class, 'hapus'])->name('thumbnails.hapus');
 
-//user 
-Route::get('/home', [HomeUserController::class, 'index']);
-Route::get('/makanan', [HomeUserController::class, 'showMakanan'])->name('showMakanan');
-Route::get('/minuman', [HomeUserController::class, 'showMinuman'])->name('showMinuman');
+// User 
+Route::get('/', [HomeUserController::class, 'index']);
 Route::get('/kategori/{nama}', [HomeUserController::class, 'showKategori'])->name('showKategori');

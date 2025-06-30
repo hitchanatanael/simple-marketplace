@@ -22,32 +22,6 @@ class HomeUserController extends Controller
         return view('user.index', $data);
     }
 
-    public function showMakanan()
-    {
-        $produk = Produk::with('kategori')
-            ->where('kategori_id', 1)
-            ->get();
-
-        $data = [
-            'produk' => $produk,
-        ];
-
-        return view('user.makanan', $data);
-    }
-
-    public function showMinuman()
-    {
-        $produk = Produk::with('kategori')
-            ->where('kategori_id', 2)
-            ->get();
-
-        $data = [
-            'produk'     => $produk,
-        ];
-
-        return view('user.minuman', $data);
-    }
-
     public function showKategori($nama)
     {
         $kategori = Kategori::where('nama', $nama)->firstOrFail();
@@ -56,9 +30,11 @@ class HomeUserController extends Controller
             ->where('kategori_id', $kategori->id)
             ->get();
 
-        return view('user.makanan', [
-            'produk' => $produk,
+        $data = [
+            'produk'   => $produk,
             'kategori' => $kategori,
-        ]);
+        ];
+
+        return view('user.kategori', $data);
     }
 }
