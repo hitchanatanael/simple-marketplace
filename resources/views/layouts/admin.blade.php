@@ -61,7 +61,7 @@
                         data-bs-toggle="dropdown">
                         <img src="{{ asset('admin/assets/img/profile-img.jpg') }}" alt="Profile"
                             class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -124,7 +124,8 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('/') ? 'active' : 'collapsed' }}" href="{{ route('dashboard') }}">
+                <a class="nav-link {{ Request::is('simple-mc-admin') ? 'active' : 'collapsed' }}"
+                    href="{{ route('dashboard') }}">
                     <i class="bi bi-speedometer"></i>
                     <span>Dashboard</span>
                 </a>
@@ -151,6 +152,23 @@
                     <i class="bi bi-list-task"></i>
                     <span>Thumbnails</span>
                 </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('login') ? 'active' : 'collapsed' }}" href="{{ route('login') }}">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Login</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-danger" type="submit">
+                        <i class="bi bi-box-arrow-in-left"></i>
+                        <span>Logout</span>
+                    </button>
+                </form>
             </li><!-- End Dashboard Nav -->
 
         </ul>

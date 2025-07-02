@@ -9,6 +9,8 @@ use App\Http\Controllers\ThumbnailsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.store');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Admin
 Route::get('/simple-mc-admin', [DashboardController::class, 'index'])->name('dashboard');
