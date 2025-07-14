@@ -66,48 +66,22 @@
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
+                            <h6>{{ Auth::user()->name }}</h6>
+                            {{-- <span>Web Designer</span> --}}
                         </li>
+
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                                <i class="bi bi-person"></i>
-                                <span>My Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                                <i class="bi bi-gear"></i>
-                                <span>Account Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                                <i class="bi bi-question-circle"></i>
-                                <span>Need Help?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
-                            </a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="btn btn-danger w-100" type="submit">
+                                    <i class="bi bi-box-arrow-in-left"></i>
+                                    <span>Logout</span>
+                                </button>
+                            </form>
                         </li>
 
                     </ul><!-- End Profile Dropdown Items -->
@@ -152,23 +126,6 @@
                     <i class="bi bi-list-task"></i>
                     <span>Thumbnails</span>
                 </a>
-            </li><!-- End Dashboard Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('login') ? 'active' : 'collapsed' }}" href="{{ route('login') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Login</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-
-            <li class="nav-item">
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button class="btn btn-danger" type="submit">
-                        <i class="bi bi-box-arrow-in-left"></i>
-                        <span>Logout</span>
-                    </button>
-                </form>
             </li><!-- End Dashboard Nav -->
 
         </ul>
